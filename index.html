@@ -25,47 +25,29 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="#home">Matches</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
+                <a class="nav-link" href="#matches">Teams</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
+                <a class="nav-link" href="#profile">Profile</a>
               </li>
             </ul>
-            <button type="button" class="btn btn-primary">Log in</button>
+            <button type="button" class="btn btn-primary btn-login" data-bs-toggle="modal" data-bs-target="#loginModal">Log in</button>
           </div>
         </div>
       </nav>
       <div class="matches row">
-          <div class="col-4 mt-3">
+          <!-- <div class="col-lg-4 col-md-6 mt-3">
             <div class="card text-center">
                 <div class="card-header">
                   <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="true" href="#">Partido</a>
+                      <a class="nav-link active" aria-current="true" href="#match">Match</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Apuestas</a>
+                      <a class="nav-link text-success" href="#bets">Bets</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link disabled">Disabled</a>
@@ -76,14 +58,115 @@
                   <h5 class="card-title">Real Madrid - Barcelona</h5>
                   <h5 class="card-title text-success">0 : 0</h5>
                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Apostar</a>
+                  <div class="d-grid col-6 mx-auto">
+                    <button type="button" class="btn btn-success">Bet</button>
+                  </div>
                 </div>
               </div>
-          </div>
+          </div> -->
           
       </div>
       </div>
     </div>
+
+    <!-- Modal log in -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Log in</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form id="login" class="needs-validation" novalidate>
+            <div class="modal-body">
+                <div class="mb-3">
+                  <label for="inputUsername" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="inputUsername" aria-describedby="usernameHelp" placeholder="Username" required>
+                  <div class="invalid-feedback">Please provide a username.</div>
+                  <div id="usernameHelp" class="form-text">We'll never share your data with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="inputPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="inputPassword"  placeholder="Password" required>
+                  <div class="invalid-feedback">Please provide a password.</div>
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="rememberCheck">
+                  <label class="form-check-label" for="rememberCheck">Remember me</label>
+                </div>
+                <p class="m-0 d-flex align-items-center">Don't have an account yet? <button type="button" data-bs-toggle="modal" data-bs-target="#registerModal" class="btn btn-link p-0 mx-1">Register</button></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Log in</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal register -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registerModalLabel">Register</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form id="register" class="needs-validation" novalidate>
+            <div class="modal-body">
+                <div class="mb-3">
+                  <label for="inputUsernameReg" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="inputUsernameReg" aria-describedby="usernameHelp" placeholder="Username" required>
+                  <div class="invalid-feedback">Please choose a username.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="inputEmailReg" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="inputEmailReg" aria-describedby="emailHelp" placeholder="Email" required>
+                  <div class="invalid-feedback">Please provide a valid email.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="inputPasswordReg" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="inputPasswordReg"  placeholder="Password" required>
+                  <div class="invalid-feedback">Please provide a password.</div>
+                </div>
+                <div class="mb-3 form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="tosCheck" required checked>
+                  <label class="form-check-label" for="tosCheck">Agree to terms and conditions</label>
+                  <div class="invalid-feedback">You must agree before submitting.</div>
+                </div>
+                <p class="m-0 d-flex align-items-center">Already have an account? <button type="button" data-bs-toggle="modal" data-bs-target="#loginModal" class="btn btn-link p-0 mx-1">Login</button></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal log out -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="logoutModalLabel">Log out</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Do you want to log out?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <form id="logout">
+              <button type="submit" class="btn btn-primary">Log out</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="./src/app.js"></script>
+    <script src="./src/validation.js"></script>
   </body>
 </html>

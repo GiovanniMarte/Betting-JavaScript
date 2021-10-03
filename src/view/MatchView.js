@@ -5,7 +5,7 @@ class MatchesView {
     let template = '';
     matches.forEach(match => {
       template += `
-        <div class="col-4 mt-3">
+        <div class="col-lg-4 col-md-6 mt-3 d-flex">
         <div class="card text-center">
             <div class="card-header">
               <ul class="nav nav-tabs card-header-tabs">
@@ -13,18 +13,20 @@ class MatchesView {
                   <a class="nav-link active" aria-current="true" href="#">Partido</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Apuestas</a>
+                  <a class="nav-link text-success" href="#">Apuestas</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link disabled">Disabled</a>
                 </li>
               </ul>
             </div>
-            <div class="card-body">
-              <h5 class="card-title">${match.teamHome} - ${match.teamAway}</h5>
-              <h5 class="card-title text-success">${match.goalsHome} : ${match.goalsAway}</h5>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title fs-6">${match.teamHome} - ${match.teamAway}</h5>
+              <h5 class="card-title text-success fw-bold">${match.goalsHome} : ${match.goalsAway}</h5>
               <p class="card-text">${new Date(match.date)}</p>
-              <a href="#" class="btn btn-primary">Apostar</a>
+              <div class="d-grid col-6 mx-auto">
+                    <button type="button" class="btn btn-success">Bet</button>
+              </div>
             </div>
           </div>
         </div>
