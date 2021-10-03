@@ -1,5 +1,5 @@
-# Betting-JavaScript
-Betting frontend application for Betting-Spring-Boot
+# Betting app
+Betting frontend application for [Betting-Spring-Boot](https://github.com/GiovanniMarte/Betting-Spring-Boot)
 
 ## Frontend
 
